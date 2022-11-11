@@ -1,0 +1,261 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% load humanize %}
+
+
+{% block title %}
+{{ block.super }} Event List
+{% endblock %}
+
+{% block jumbotron %}
+{% include 'celebration/header.html' %}
+
+
+
+<div class="tm-slider-box tm-light-bg">
+    <section class="tm-slider uk-grid tm-none-padding" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin>
+        <!-- start full width -->
+        <div class="uk-width-1-1">
+            <div class="uk-panel top-pageslider CuteChurch">
+
+                <div class="slider-module">
+                    <div class="uk-slidenav-position" data-uk-slideshow="{height: &#039;300&#039;, animation: &#039;fade&#039;, duration: &#039;&#039;, autoplay: true, autoplayInterval: &#039;5000&#039;, videoautoplay: false, videomute: false, kenburns: false}">
+                        <ul class="uk-slideshow uk-overlay-active">
+                            <li class="uk-cover uk-height-viewport  tm-wrap"><img src="{% static 'images/bg_page.jpg' %}" alt="bg_page" width="1920" height="360" class="aligncenter size-full" />
+                            </li>
+                            <li class="uk-cover uk-height-viewport  tm-wrap"><img src="{% static 'images/bg_page-01.jpg' %}" alt="bg_page-01" width="1920" height="300" class="aligncenter size-full" />
+                            </li>
+                            <li class="uk-cover uk-height-viewport  tm-wrap"><img src="{% static 'images/bg_page-02.jpg' %}" alt="bg_page-02" width="1920" height="300" class="aligncenter size-full" />
+                                <div class="uk-cover-background uk-position-cover" style="background-image: url(&quot;./images/bg_page-02.jpg&quot;);"></div>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- end full width -->
+    </section>
+</div>
+{% endblock %}
+
+
+
+
+{% block event %}
+<div class="uk-container uk-container-center">
+    <div class="uk-grid" data-uk-grid-match data-uk-grid-margin>
+        <div class="tm-main uk-width-medium-3-4 tm-middle">
+            <main class="tm-content">
+                <div id="tribe-events-pg-template">
+                    <div id="tribe-events" class="tribe-no-js" data-live_ajax="0" data-datepicker_format="0" data-category="">
+                        <div id="tribe-events-content-wrapper" class="tribe-clearfix">
+                            <!-- Tribe Bar -->
+                            <!-- Main Events Content -->
+                            <div id="tribe-events-content" class="tribe-events-list">
+                                <!-- Notices -->
+                                <!-- List Header -->
+                                <div id="tribe-events-header" data-title="Upcoming Events | Events | Church" data-startofweek="1" data-view="list">
+                                    <!-- Header Navigation -->
+                                    <h3 class="tribe-events-visuallyhidden">Events List Navigation</h3>
+                                    
+                                </div>
+                                <!-- #tribe-events-header -->
+                                <!-- Events Loop -->
+                                <div class="tribe-events-loop vcalendar">
+                                	{% for i in mass %}
+                                    <!-- Event  -->
+                                    <div id="post-283" class="hentry vevent type-tribe_events post-283 tribe-clearfix tribe-events-category-classes tribe-events-category-student-ministries tribe-events-venue-193 tribe-events-organizer-212 tribe-events-first">
+                                        <!-- Event Cost -->
+                                        <div class="tribe-events-event-cost">
+                                            <span>{{ i.cost }}</span>
+                                        </div>
+                                        <!-- Event Content -->
+                                        <div class="tribe-events-list-event-description tribe-events-content description entry-summary">
+                                            <div class="tm-event-list">
+                                                <div class="tm-event-list-info">
+                                                    <!-- Event Meta -->
+                                                    <div class="tribe-events-event-meta vcard">
+                                                        <div class="day">
+                                                            <span>{{ i.event_start_date|date:"d"}}</span>
+                                                            <p>{{ i.event_start_date|date:"M"}}</p>
+                                                        </div>
+                                                        <div class="time">
+                                                            <p>{{ i.event_start_date|date:"H:m"}}</p>
+                                                            <p class="tm-event-venue">{{ i.title }}</p>
+                                                        </div>
+                                                    </div>
+                                                    <!-- .tribe-events-event-meta -->
+                                                </div>
+                                                <!-- Event Image -->
+                                                <div class="tribe-events-event-image">
+
+
+
+                                                    <a href="{{ i.get_absolute_url }}">
+                                                        {% if i.image_1024_by_300 %}
+                                                        <img width="198" height="330" src="{{ i.image_1024_by_300.url }}" class="attachment-thumbnail wp-post-image" alt="{{ i.title }}" />
+
+                                                        {% else %}
+                                            <img src="{% static 'images/default_pic.png' %}" class="attachment-thumbnail wp-post-image" alt="gall-img-011" height="330" width="198">
+
+                                            {% endif %}
+
+
+                                                    </a>
+                                                </div>
+                                                <!-- Event Title -->
+                                                <div class="tm-event-list-content-info">
+                                                    <h2 class="tribe-events-list-event-title entry-title summary">
+														<a class="url" href="{{ i.get_absolute_url }}" title="Class: Biblical vision of Justice" rel="bookmark">{{ i.title }}</a>
+													</h2> 
+													{{ i.snippet }} &#8230; <a href="{{ i.get_absolute_url }}" class="read-more" rel="bookmark">Read more &raquo;</a>
+                                                    <div class="clr"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- .tribe-events-list-event-description -->
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                <!-- .tribe-events-loop -->
+                                <!-- List Footer --><br>
+                                <div id="tribe-events-footer">
+                                    <!-- Footer Navigation -->
+                                    <!-- <h3 class="tribe-events-visuallyhidden">Events List Navigation</h3> -->
+                                    <ul class="tribe-events-sub-nav">
+                                        <!-- Left Navigation -->
+                                        <!-- Right Navigation -->
+                                        <li class="tribe-events-nav-next tribe-events-nav-right">
+                                            <a href="#" rel="next">Next Events <span>&raquo;</span></a>
+                                        </li>
+                                        <!-- .tribe-events-nav-right -->
+                                    </ul>
+                                </div>
+                                <!-- #tribe-events-footer -->
+                               <!--  <a class="tribe-events-ical tribe-events-button" title="Use this to share calendar data with Google Calendar, Apple iCal and other compatible apps" href="#">+ Export Listed Events</a> -->
+                            </div>
+                            <!-- #tribe-events-content -->
+                            <div class="tribe-clear"></div>
+                        </div>
+                        <!-- #tribe-events-content-wrapper -->
+                        <div class="tribe-events-after-html"></div>
+                    </div>
+                    <!-- #tribe-events -->
+                    <!--This calendar is powered by The Events Calendar.http://eventscalendarpro.com/-->
+                </div>
+                <!-- #tribe-events-pg-template -->
+            </main>
+        </div>
+        <aside class="tm-sidebar-b uk-width-medium-1-4 tm-middle"><!-- 
+            <div class="uk-panel CuteEventsSidebar">
+                <h3 class="uk-panel-title">Upcoming  Events</h3>
+                <div class="uk-grid tm-cat-event-sb-widget">
+                    <ul>
+                        <li class="">
+                            <div class="post-date">
+                                <div class="day">
+                                    <span>12</span>
+                                    <p>May</p>
+                                </div>
+                            </div>
+                            <div class="">
+                                <h5><a href="#">I am going to send you what</a></h5>
+                                <p class="">Church of Jesus Christ</p>
+                                <p class="">12 May&#32;8:30 am&#32;-&#32;5:00 pm</p>
+                                <div class="duration"></div>
+                            </div>
+                            <div class="clr"></div>
+                        </li>
+                        <li class="">
+                            <div class="post-date">
+                                <div class="day">
+                                    <span>15</span>
+                                    <p>Jun</p>
+                                </div>
+                            </div>
+                            <div class="">
+                                <h5><a href="#">Child Dedications</a></h5>
+                                <p class="">Bethlehem Church</p>
+                                <p class="">15 Jun&#32;8:00 am&#32;-&#32;5:00 pm</p>
+                                <div class="duration"></div>
+                            </div>
+                            <div class="clr"></div>
+                        </li>
+                        <li class="">
+                            <div class="post-date">
+                                <div class="day">
+                                    <span>10</span>
+                                    <p>Mar</p>
+                                </div>
+                            </div>
+                            <div class="">
+                                <h5><a href="#">Art lessons for Kids</a></h5>
+                                <p class="">Bethlehem Church</p>
+                                <p class="">10 Mar&#32;8:00 am&#32;-&#32;5:00 pm</p>
+                                <div class="duration"></div>
+                            </div>
+                            <div class="clr"></div>
+                        </li>
+                        <li class="">
+                            <div class="post-date">
+                                <div class="day">
+                                    <span>14</span>
+                                    <p>Jun</p>
+                                </div>
+                            </div>
+                            <div class="">
+                                <h5><a href="#">Holy shift: Strategic think</a></h5>
+                                <p class="">Bethlehem Church</p>
+                                <p class="">14 Jun&#32;8:00 am&#32;-&#32;5:00 pm</p>
+                                <div class="duration"></div>
+                            </div>
+                            <div class="clr"></div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="uk-panel CuteEventGallery">
+                <h3 class="uk-panel-title">Event Photos</h3>
+                <div class="tm-widget-post-image">
+                    <a href="gallery.html"><img width="82" height="70" src="./images/gall-img-011-82x70.jpg" class="attachment-post-small-thumbnails wp-post-image" alt="gall-img-011" />
+                    </a>
+                </div>
+                <div class="tm-widget-post-image">
+                    <a href="gallery.html"><img width="82" height="70" src="./images/gall-img-0031-82x70.jpg" class="attachment-post-small-thumbnails wp-post-image" alt="NEWS" />
+                    </a>
+                </div>
+                <div class="tm-widget-post-image">
+                    <a href="gallery.html"><img width="82" height="70" src="./images/gall-img-006-82x70.jpg" class="attachment-post-small-thumbnails wp-post-image" alt="NEWS" />
+                    </a>
+                </div>
+                <div class="tm-widget-post-image">
+                    <a href="gallery.html"><img width="82" height="70" src="./images/gall-img-0041-82x70.jpg" class="attachment-post-small-thumbnails wp-post-image" alt="EVENTS" />
+                    </a>
+                </div>
+                <div class="tm-widget-post-image">
+                    <a href="gallery.html"><img width="82" height="70" src="./images/gall-img-0081-82x70.jpg" class="attachment-post-small-thumbnails wp-post-image" alt="GALLERY" />
+                    </a>
+                </div>
+                <div class="tm-widget-post-image">
+                    <a href="gallery.html"><img width="82" height="70" src="./images/slider-img-01-82x70.jpg" class="attachment-post-small-thumbnails wp-post-image" alt="slider-img-01" />
+                    </a>
+                </div>
+            </div>
+         --></aside>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+{% block footer %}
+{% include 'home/footer.html' %}
+{% endblock %}
+
+

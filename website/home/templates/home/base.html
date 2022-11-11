@@ -1,0 +1,159 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+{% block tweet %}
+
+{% endblock %}
+<title>{% block title %} St. Augustine || {% endblock %}</title>
+
+<link rel="shortcut icon" href="{% static 'assets/img/st_augustine_logo.png' %}" type="img/png" />
+<link href="{% static 'css/theme.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/woocommerce.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/tribe-events-full.min.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/tribe-events-theme.min.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/button.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/dashicons.min.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/woocommerce-layout.css' %}" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+	a.tm-logo {
+	  background: url("{% static 'images/st_augustine_logo.png' %}") no-repeat;
+	}
+
+    .centered-thing {
+        position: absolute;
+        margin: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+	a.tm-logo:hover {
+	  opacity: 1;
+	  background-position: unset;
+	}
+    .tm-category-posts-block .post-date .time .tm-event-venue {
+      color: #000;
+      font-size: 15px;
+    }
+
+    span.brackets {
+      text-align: center;
+    }
+</style>
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+
+</head>
+<body class='single single-tribe_events wp-tribe_events-single tribe-events-page-template tribe-bar-is-disabled tribe-theme-cutechurch woocommerce woocommerce-page'>
+
+{% block jumbotron %}
+{% endblock %}
+
+{% block pastors %}
+{% endblock %}
+
+{% block gallery %}
+{% endblock %}
+
+{% block contact_form %}
+{% endblock %}
+
+{% block next %}
+{% endblock %}
+
+{% block event %}
+{% endblock %}
+
+{% block amfi %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+
+<div id="offcanvas" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar">
+        <div class="uk-panel widget_search">
+            <form class="uk-search" id="search-3" method="get" role="search">
+                <input class="uk-search-field" type="text" value="" name="s" placeholder="search...">
+            </form>
+        </div>
+        <ul class="uk-nav uk-nav-offcanvas">
+        {% url 'home:home' as home %}
+        {% url 'home:events' as event %}
+        {% url 'sacrament:sacrament' as sacrament %}
+        {% url 'gallery:gallery' as gallery %}
+        {% url 'priests:priests' as priests %}
+        {% url 'about:about' as about %}
+        {% url 'contact:contact' as contact %}
+
+        <li class="{% if request.path == home %}uk-active{% endif %}" >
+            <a href="{% url 'home:home' %}" class="">HOME</a>
+        </li>
+        
+        <li class="{% if request.path == event %}uk-active{% endif %}">
+            <a href="{% url 'home:events' %}" class="">EVENT</a>
+        </li>
+        <!-- <li class="{% if request.path == sacrament %}uk-active{% endif %}">
+            <a href="{% url 'sacrament:sacrament' %}" class="">SACRAMENTS</a>
+        </li> -->
+        <!-- <li class="{% if request.path == gallery %}uk-active{% endif %}">
+            <a href="{% url 'gallery:gallery' %}" class="">GALLERY</a>
+        </li> -->
+        <li class="{% if request.path == priests %}uk-active{% endif %}">
+            <a href="{% url 'priests:priests' %}" class="">PRIESTS</a>
+        </li>   
+        <li>
+            <a href="https://www.amfiinstitute.com" class="">AMFI</a>
+        </li>
+        <li class="{% if request.path == about %}uk-active{% endif %}">
+            <a href="{% url 'about:about' %}" class="">ABOUT</a>
+        </li>
+        <li class="{% if request.path == contact %}uk-active{% endif %}">
+            <a href="{% url 'contact:contact' %}" class="">CONTACT US</a>
+        </li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/uikit.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/slider.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/slideset.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/slideshow.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/slideshow-fx.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/sticky.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/lightbox.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/accordion.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/countdown.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/grid.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/sortable.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+
+
+<script type="text/javascript" src="{% static 'js/jquery.prettyPhoto.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.prettyPhoto.init.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.blockUI.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/single-product.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/cart-fragments.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/woocommerce.min.js' %}"></script>
+
+
+
+
+
+{% block java %}
+
+{% endblock %}
+
+
+</body>
+</html>

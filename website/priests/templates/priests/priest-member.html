@@ -1,0 +1,97 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% load humanize %}
+
+
+{% block title %}
+{{ block.super }} Pastors
+{% endblock %}
+
+{% block jumbotron %}
+{% include 'priests/header.html' %}
+
+
+
+<div class="tm-slider-box tm-light-bg">
+    <section class="tm-slider uk-grid tm-none-padding" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin>
+        <!-- start full width -->
+        <div class="uk-width-1-1">
+            <div class="uk-panel top-pageslider CuteChurch">
+
+                <div class="slider-module">
+                    <div class="uk-slidenav-position" data-uk-slideshow="{height: &#039;300&#039;, animation: &#039;fade&#039;, duration: &#039;&#039;, autoplay: true, autoplayInterval: &#039;5000&#039;, videoautoplay: false, videomute: false, kenburns: false}">
+                        <ul class="uk-slideshow uk-overlay-active">
+                            <li class="uk-cover uk-height-viewport  tm-wrap"><img src="{% static 'images/bg_page.jpg' %}" alt="bg_page" width="1920" height="360" class="aligncenter size-full" />
+                            </li>
+                            <li class="uk-cover uk-height-viewport  tm-wrap"><img src="{% static 'images/bg_page-01.jpg' %}" alt="bg_page-01" width="1920" height="300" class="aligncenter size-full" />
+                            </li>
+                            <li class="uk-cover uk-height-viewport  tm-wrap"><img src="{% static 'images/bg_page-02.jpg' %}" alt="bg_page-02" width="1920" height="300" class="aligncenter size-full" />
+                                <div class="uk-cover-background uk-position-cover" style="background-image: url(&quot;./images/bg_page-02.jpg&quot;);"></div>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- end full width -->
+    </section>
+</div>
+{% endblock %}
+
+
+
+
+
+{% block pastors %}
+<div class="uk-container uk-container-center">
+    <div class="uk-grid" data-uk-grid-match data-uk-grid-margin>
+        <div class="tm-main uk-width-medium-1-1 tm-middle">
+            <main class="tm-content">
+                <section>
+                    <div id="primary" class="site-content">
+                        <div id="content" role="main">
+                            <h2>Our pastors</h2>
+                            {% if priests %}
+                            <ul class="tm-category-posts-list">
+                            	{% for i in priests %}
+                            		<li class="tm-post-list-block clearfix" style="padding: 20px;">
+                                    <div class="flleft" style="margin-right: 20px;">
+                                        <img width="164" height="164" src="{{ i.image_370_by_410.url }}" class="attachment-thumbnail wp-post-image" alt="{{ i.full_name }}" /> </div>
+                                    <div class="">
+                                        <h3 class="tm-panel-header"><a href="{{ i.get_absolute_url }}">{{ i.full_name }}</a></h3>
+                                        <div class="tm-grey-color">
+                                            <span class="title"><a href="{{ i.get_absolute_url }}">{{ i.designation }}</a></span><!-- &#32;&#124;&#32; 0&#32;Comments -->
+                                        </div>
+
+                                        <div class="line"></div>
+                                        <div>{{ i.snippet|safe }}</div>
+                                        <!-- <div>Etiam porta, purus nec vestibulum pulvinar, felis metus er placerat magna, nec ultricies dui nec nibo. Ut eleifend porta mattis. Vestibulum et mollis lorem, at fringilla enim. Donec velit nunc,&hellip;</div> -->
+                                        <a href="{{ i.get_absolute_url }}" class="read-more">read more</a>
+                                    </div>
+                                </li>
+                            	{% endfor %}
+                            </ul>
+                            {% endif %}
+                            <div class="navigation">
+                                <a href="#">Next Page &raquo;</a> </div>
+                        </div>
+                        <!-- #content -->
+                    </div>
+                    <!-- #primary -->
+                </section>
+            </main>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block footer %}
+{% include 'home/footer.html' %}
+{% endblock %}
+
+

@@ -1,0 +1,190 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% load humanize %}
+
+
+{% block title %}
+{{ block.super }} Home
+{% endblock %}
+
+
+{% block jumbotron %}
+{% include 'home/header.html' %}
+    
+<div class="tm-slider-box tm-light-bg">
+    <section class="tm-slider uk-grid tm-none-padding" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin>
+        <!-- start full width -->
+        <div class="uk-width-1-1">
+            <div class="uk-panel top-pageslider CuteChurch">
+
+                <div class="slider-module">
+                    <div class="uk-slidenav-position" data-uk-slideshow="{height: &#039;300&#039;, animation: &#039;fade&#039;, duration: &#039;&#039;, autoplay: true, autoplayInterval: &#039;5000&#039;, videoautoplay: false, videomute: false, kenburns: false}">
+                        <ul class="uk-slideshow uk-overlay-active">
+                            <li class="uk-cover uk-height-viewport  tm-wrap"><img src="{% static './images/bg_page.jpg' %}" alt="bg_page" width="1920" height="360" class="aligncenter size-full" />
+                            </li>
+                            <li class="uk-cover uk-height-viewport  tm-wrap"><img src="{% static './images/bg_page-01.jpg' %}" alt="bg_page-01" width="1920" height="300" class="aligncenter size-full" />
+                            </li>
+                            <li class="uk-cover uk-height-viewport  tm-wrap"><img src="{% static './images/bg_page-02.jpg' %}" alt="bg_page-02" width="1920" height="300" class="aligncenter size-full" />
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- end full width -->
+    </section>
+</div>
+
+<div class="uk-container uk-container-center">
+    <div class="uk-grid" data-uk-grid-match data-uk-grid-margin>
+        <div class="tm-main uk-width-medium-1-1 tm-middle">
+            <main class="tm-content">
+                <section>
+                    <div data-uk-slider class="">
+                        <div class="uk-slider-container post-gallery">
+                            <ul class="uk-slider uk-grid-width-medium-1-1">
+                            </ul>
+                            <a href="" class="tm-slidenav tm-post-gallery-previous" data-uk-slider-item="previous" draggable="false"><i class="uk-icon-angle-left"></i></a>
+                            <a href="" class="tm-slidenav tm-post-gallery-next" data-uk-slider-item="next" draggable="false"><i class="uk-icon-angle-right"></i></a>
+                        </div>
+                    </div>
+                    <div id="primary" class="site-content post-content">
+                        <div class="main-heading">
+                            <h1 class="tm-page-title">ABOUT US - THE RETURN OF MISSIONARIES - 2002.</h1>
+                        </div>
+                        <div id="content" role="main">
+                            The Claretian Missionaries were the second missionaries to work in Ikorodu after the white missionaries. The Claretians, Rev. Fr. Henry Omonisaye, CMF was made the Parish Priest while Rev. Fr. Daniel Mary Onyeayana, CMF and Rev. Fr. Philip Igbo, CMF were his co-pastors respectively. <br>
+                            <P>In 2002, Rev. Fr. Philip Igbo, CMF left for further studies in Rome and Rev. Fr. Augustine Amadi, CMF replaced him.</P>
+
+ 
+                            <img class="aligncenter size-full wp-image-317" src="{% static './images/claratian.png' %}" alt="img_010" width="1122" height="332" /> On the 1st of December 2008, Rev. Fr. Daniel Mary Onyeayana, CMF left for mission in the U.S.A and this ushered in Rev. Fr. Augustine Medaiyedu-Ambrose, CMF as the new Parish Pastor with Rev. Jude Dominic Adesina Igba, CMF as his Co-Pastor in March 2020.
+                            
+                            <p>In September 2016, Frs. Augustine Medaiyedu-Ambrose and Mike Ekeh, CMf were transferred respectively. This development ushered in Rev. Fr. Livinus Ikechukeu Orakwe, CMf as the Parish Pastor on 30th september 2016 with Rev. Fr. Adolphud Mbaocha and John Omoha CMF as Co-Pastors.</p>
+                            
+                            <p>Within a space of time of their stay in the parish, they have made very remarkable impressions on the church. Notable among them is the creation of St. Anthony Mary Claret Catholic Church, Eyita (outstation) arid Immaculate Heart Catholic Church, Maya and Our Lady of Fatima Adamo and the construction of the parish warehouse, archive were realized. The establishment of a unified Saturday Devotion cannot but be mentioned. They have also produced and mounted a Giant Statue of the Patron Saint of the Parish, St. Augustine's of Hippo. A Construction of an Ultra-Modern Toilet Facility named after Very Rev. Msgr. Sylvester E.U. Osigweh. In the year 2018 Our Lady of Fatima Catholic Church, was established at Adamo, Ikorodu. An extension has also been made to accommodate the Catechism Classes and Confessional. The construction of the CCM Pieta was done and the erection security street lights were also realized. The renovation of Marian Grotto, the installation of the digital screen in front of the church and the creation of the Harvest/PFC office were made.  The Parish bookshop was expanded while the business center/ PFC data point was again realized. The Parish uniform and the establishment of the Patron’s novena booklet were also added. Also the construction of New Church Building at Imota and Itamope’s father;s House.</p>
+                            
+                            <p>At the time security deficit was ravaging the country, the two major gates were permanented for entrance while the other for exit in -order to ease movement. A Parish Car wash was inaugurated in December, 1019n12 pat of Empowerment Programme by the Mission Statement Committee.</p>
+                            
+                            <p>In 2018 the Archbishop OF Lagos carved out St. Andrew’s Catholic Church, Itamope as a Quasi Parish with the Priest-in-Charge, Rev. FR. Kevin Okuma. She left with A S Imota IHM Maya, St. Daniel Isiu and OLF Adamo. In all of the growth and development of the life of the Faithful is not undermined.</p>
+                            
+                            <p>The achievement recorded above have all been motivated by   progressive growth in the spiritual life of the faithful of the Parish and the continuous generosity, support and contributions of the parishioners and the spirit-pastoral encouragement by the chains of priests who worked in Ikorodu including those who are still working in the Parish till now, in August 2019, Frs. John Omoha Cmf and Adolphus Mbaocha CMf were transferred while Frs.  Moses Okpanach Musa CMF, Louis Ajinge CMf and Emmanuel Ubi Terseer CMF were posted to replace them as co-pastors.</p>
+                            <!-- <blockquote class="white">“All who rage against you will surely be ashamed and disgraced; those who oppose you will be as nothing and perish.” <strong>Isaiah 41:11</strong>
+                            </blockquote> -->
+                            <!-- Aenean ut convallis quam. Nulla fringilla cursus nisl. Cras eu dui ut sapien rhoncus varius eu dictum turpis. Vestibulum fermentum nunc non aliquam suscipit. Sed diam mi, elementum a ipsum et, venenatis vulputate velit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus pellentesque ultricies velit vel pulvinar. Nunc ut tempus orci, a pulvinar turpis. Praesent pellentesque finibus nisi, vel venenatis risus iaculis eu. Nulla eget nunc sit amet felis imperdiet posuere. Curabitur sed elit orci. Vivamus eu diam sed dui egestas tincidunt imperdiet a mauris. -->
+                            <div class="clr"></div>
+                        </div>
+                        <!-- #content -->
+                    </div>
+                    <!-- #primary -->
+                </section>
+            </main>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="tm-bottom-a-box tm-dark-bg">
+    <div class="uk-container uk-container-center">
+        <section class="tm-bottom-a uk-grid tm-large-padding" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin>
+
+            <div class="uk-width-1-1">
+                <div class="uk-panel CutePastors">
+                    <div class="tm-widget-top-text">
+                        <h1 class="tm-title tcenter"><span class="border">Our pastors</span></h1> In The office of the ministers of religion, who have been commissioned ("ordained") with the Holy orders of St. Augustine Catholic Church MaryHill Ikorodu, Lagos State.</div>
+                    <div data-uk-slideset="{small: 1, medium: 2, large: 4}" class="tm-slideset">
+                        <div class="uk-slidenav-position">
+                            {% if priests %}
+                            <ul class="uk-grid uk-slideset ">
+                                {% for i in priests %}
+                                <li>
+                                    <div class="uk-panel">
+                                        <p><span class="circle-border">
+                                            {% if i.image_370_by_410.url %}
+                                            <img width="164" height="164" src="{{ i.image_370_by_410.url }}" class="attachment-thumbnail wp-post-image" alt="img_pastors_001" />
+
+                                            {% else %}
+
+                                            <img width="164" height="164" src="{% static './images/img_testim_002.jpg' %}" class="attachment-thumbnail wp-post-image" alt="img_pastors_002" />
+                                            
+                                            {% endif %}
+                                        </span>
+                                        </p>
+                                        <h4 class="uk-panel-header"><span class="brackets"><a href="{{ i.get_absolute_url }}">{{ i.full_name }}</a></span></h4>
+                                        <h6 style="text-align: center;">{{ i.designation }}</h6>
+                                    </div>
+                                </li>
+                                {% endfor %}
+
+
+                                <li>
+                                    <div class="uk-panel">
+                                        <p><span class="circle-border"><img width="164" height="164" src="./images/img_testim_001.jpg" class="attachment-thumbnail wp-post-image" alt="img_pastors_001" /></span>
+                                        </p>
+                                        <h4 class="uk-panel-header"><span class="brackets"><a href="our-pastors.html">Jesse Ramirez</a></span></h4>
+                                        <div>Vestibulum metus libero, feugiat nec arcu in, tristique placerat erat. Curabitur ornare turpis et ex&hellip;</div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="uk-panel">
+                                        <p><span class="circle-border"><img width="164" height="164" src="{% static './images/img_testim_002.jpg' %}" class="attachment-thumbnail wp-post-image" alt="img_pastors_002" /></span>
+                                        </p>
+                                        <h4 class="uk-panel-header"><span class="brackets"><a href="our-pastors.html">Terrence Tucker</a></span></h4>
+                                        <div>Vestibulum metus libero, feugiat nec arcu in, tristique placerat erat. Morbi ultrices lacus non magna&hellip;</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="uk-panel">
+                                        <p><span class="circle-border"><img width="164" height="164" src="{% static './images/img_testim_003.jpg' %}" class="attachment-thumbnail wp-post-image" alt="img_pastors_003" /></span>
+                                        </p>
+                                        <h4 class="uk-panel-header"><span class="brackets"><a href="our-pastors.html">Timmothy Mitchelle</a></span></h4>
+                                        <div>Vestibulum metus libero, feugiat nec arcu in, tristique placerat erat. Curabitur ornare turpis et ex&hellip;</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="uk-panel">
+                                        <p><span class="circle-border"><img width="164" height="164" src="{% static './images/img_testim_004.jpg' %}" class="attachment-thumbnail wp-post-image" alt="img_pastors_004" /></span>
+                                        </p>
+                                        <h4 class="uk-panel-header"><span class="brackets"><a href="our-pastors.html">Bill Coleman</a></span></h4>
+                                        <div>Vestibulum metus libero, feugiat nec arcu in, tristique placerat erat. Curabitur ornare turpis et ex&hellip;</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="uk-panel">
+                                        <p><span class="circle-border"><img width="164" height="164" src="{% static './images/img_testim_005.jpg' %}" class="attachment-thumbnail wp-post-image" alt="img_pastors_005" /></span>
+                                        </p>
+                                        <h4 class="uk-panel-header"><span class="brackets"><a href="our-pastors.html">Jessica Graham</a></span></h4>
+                                        <div>Vestibulum metus libero, feugiat nec arcu in, tristique placerat erat. Curabitur ornare turpis et ex&hellip;</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="uk-panel">
+                                        <p><span class="circle-border"><img width="164" height="164" src="{% static './images/img_testim_006.jpg' %}" class="attachment-thumbnail wp-post-image" alt="img_testim_006" /></span>
+                                        </p>
+                                        <h4 class="uk-panel-header"><span class="brackets"><a href="our-pastors.html">John Nelson</a></span></h4>
+                                        <div>Etiam porta, purus nec vestibulum pulvinar, felis metus er placerat magna, nec ultricies dui nec&hellip;</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            {% endif %}
+                            <a href="" data-uk-slideset-item="previous" class="tm-slideset-previous"></a>
+                            <a href="" data-uk-slideset-item="next" class="tm-slideset-next"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div> -->
+
+{% endblock %}
+
+
+
+{% block footer %}
+{% include 'home/footer.html' %}
+{% endblock %}
+

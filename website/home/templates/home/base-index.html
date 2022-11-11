@@ -1,0 +1,202 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+{% block tweet %}
+
+{% endblock %}
+<title>{% block title %} St. Augustine || {% endblock %}</title>
+
+
+
+<link rel="shortcut icon" href="{% static 'assets/img/st_augustine_logo.png' %}" type="img/png" />
+<link href="{% static 'css/theme.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/woocommerce.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/tribe-events-full.min.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/tribe-events-theme.min.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/button.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/dashicons.min.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/woocommerce-layout.css' %}" rel="stylesheet" type="text/css" />
+
+
+
+<style type="text/css">
+    .slide-head1{
+        text-transform: uppercase;
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 45px;
+        padding: 10px 10px 0;
+        color: #ffffff;
+            }
+	a.tm-logo {
+	  background: url("{% static 'images/st_augustine_logo.png' %}") no-repeat;
+	}
+	a.tm-logo:hover {
+	  opacity: 1;
+	  background-position: unset;
+	}
+    .tm-category-posts-block .post-date .time .tm-event-venue {
+      color: #000;
+      font-size: 15px;
+    }
+</style>
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+</head>
+<body class='single single-tribe_events wp-tribe_events-single tribe-events-page-template tribe-bar-is-disabled tribe-theme-cutechurch woocommerce woocommerce-page'>
+
+{% block jumbotron %}
+{% endblock %}
+
+
+{% block tm-slider-box %}
+{% endblock %}
+
+
+{% block tm-top-a %}
+{% endblock %}
+
+
+{% block tm-top-b %}
+{% endblock %}
+
+
+{% block tm-top-c %}
+{% endblock %}
+
+
+{% block tm-top-e %}
+{% endblock %}
+
+{% block tm-top-f %}
+{% endblock %}
+
+{% block tm-top-e-box %}
+{% endblock %}
+
+{% block tm-bottom-d %}
+{% endblock %}
+
+{% block tm-bottom-e %}
+{% endblock %}
+
+
+{% block footer %}
+{% endblock %}
+		
+
+
+
+
+<div id="offcanvas" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar">
+        <div class="uk-panel widget_search">
+            <form class="uk-search" id="search-3" method="get" role="search">
+                <input class="uk-search-field" type="text" value="" name="s" placeholder="search...">
+            </form>
+        </div>
+        <ul class="uk-nav uk-nav-offcanvas">
+            <li class="uk-parent"><a href="index.html" class="">HOME</a>
+                <ul class="uk-nav-sub">
+                    <li><a href="index-home2.html" class="">HOME 2</a>
+                    </li>
+                    <li><a href="index-home3.html" class="">HOME 3</a>
+                    </li>
+                    <li><a href="../chocolate/index.html" class="">CHOCOLATE STYLE</a>
+                    </li>
+                    <li><a href="../blue/index.html" class="">GREEN STYLE</a>
+                    </li>
+                    <li><a href="../green/index.html" class="">BLUE STYLE</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="uk-parent"><a href="about-us.html" class="">ABOUT US</a>
+                <ul class="uk-nav-sub">
+                    <li><a href="layouts.html" class="">LAYOUTS</a>
+                    </li>
+                    <li><a href="offline.html" class="">MAINTENANCE</a>
+                    </li>
+                    <li><a href="coming.html" class="">COMING SOON</a>
+                    </li>
+                    <li><a href="error.html" class="">ERROR PAGE</a>
+                    </li>
+                    <li><a href="single-article.html" class="">SINGLE ARTICLE</a>
+                    </li>
+                    <li><a href="left-content.html" class="">LEFT + CONTENT</a>
+                    </li>
+                    <li><a href="left-right-content.html" class="">LEFT + RIGHT + CONTENT</a>
+                    </li>
+                    <li><a href="left-content-right.html" class="">LEFT + CONTENT + RIGHT</a>
+                    </li>
+                    <li><a href="content-right.html" class="">CONTENT + RIGHT</a>
+                    </li>
+                    <li><a href="content-left-right.html" class="">CONTENT + LEFT + RIGHT</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="uk-parent"><a href="event.html" class="">EVENT</a>
+                <ul class="uk-nav-sub">
+                    <li><a href="event-list.html" class="">EVENT LIST</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="sermons.html" class="">SERMONS</a>
+            </li>
+            <li class="uk-parent"><a href="blog.html" class="">BLOG</a>
+                <ul class="uk-nav-sub">
+                    <li><a href="our-pastors.html" class="">OUR PASTORS</a>
+                    </li>
+                    <li><a href="testimonials.html" class="">TESTIMONIALS</a>
+                    </li>
+                    <li><a href="faq.html" class="">HELP</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="gallery.html" class="">GALLERY</a>
+            </li>
+            <li><a href="donations.html" class="">DONATIONS</a>
+            </li>
+            <li><a href="shop.html" class="">SHOP</a>
+            </li>
+            <li><a href="contact-us.html" class="">CONTACT US</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/uikit.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/slider.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/slideset.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/slideshow.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/slideshow-fx.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/sticky.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/lightbox.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/accordion.js' %}"></script>
+<!-- <script type="text/javascript" src="{% static 'js/countdown.js' %}"></script> -->
+<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/grid.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/sortable.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+
+
+<script type="text/javascript" src="{% static 'js/jquery.prettyPhoto.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.prettyPhoto.init.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.blockUI.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/single-product.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/cart-fragments.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/woocommerce.min.js' %}"></script>
+
+
+{% block java %}
+
+{% endblock %}
+</body>
+</html>

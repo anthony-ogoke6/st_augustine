@@ -1,0 +1,40 @@
+<nav class="uk-navbar">
+<!--tm-navbar (hide defolt styles) -->
+	<ul class="uk-navbar-nav uk-hidden-small">
+
+		{% url 'home:home' as home %}
+        {% url 'home:events' as event %}
+        {% url 'sacrament:sacrament' as sacrament %}
+        {% url 'gallery:gallery' as gallery %}
+        {% url 'priests:priests' as priests %}
+        {% url 'about:about' as about %}
+        {% url 'contact:contact' as contact %}
+
+		<li class="{% if request.path == home %}uk-active{% endif %}" >
+			<a href="{% url 'home:home' %}" class="">HOME</a>
+		</li>
+		
+		<li class="{% if request.path == event %}uk-active{% endif %}">
+			<a href="{% url 'home:events' %}" class="">EVENT</a>
+		</li>
+		<!-- <li class="{% if request.path == sacrament %}uk-active{% endif %}">
+			<a href="{% url 'sacrament:sacrament' %}" class="">SACRAMENTS</a>
+		</li> -->
+		<!-- <li class="{% if request.path == gallery %}uk-active{% endif %}">
+			<a href="{% url 'gallery:gallery' %}" class="">GALLERY</a>
+		</li> -->
+		<li class="{% if request.path == priests %}uk-active{% endif %}">
+			<a href="{% url 'priests:priests' %}" class="">PRIESTS</a>
+		</li>	
+		<li>
+			<a href="https://www.amfiinstitute.com" class="">AMFI</a>
+		</li>
+		<li class="{% if request.path == about %}uk-active{% endif %}">
+			<a href="{% url 'about:about' %}" class="">ABOUT</a>
+		</li>
+		<li class="{% if request.path == contact %}uk-active{% endif %}">
+			<a href="{% url 'contact:contact' %}" class="">CONTACT US</a>
+		</li>
+	</ul>						
+	<a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas=""></a>
+</nav>

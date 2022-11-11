@@ -1,0 +1,94 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+{% block tweet %}
+
+{% endblock %}
+<title>{% block title %} St. Augustine || {% endblock %}</title>
+
+
+<link rel="shortcut icon" href="{% static 'assets/img/st_augustine_logo.png' %}" type="img/png" />
+<link href="{% static 'css/theme.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/woocommerce.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/tribe-events-full.min.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/tribe-events-theme.min.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/button.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/dashicons.min.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/woocommerce-layout.css' %}" rel="stylesheet" type="text/css" />
+
+
+<style type="text/css">
+	a.tm-logo {
+	  background: url("{% static 'images/st_augustine_logo.png' %}") no-repeat;
+	}
+	a.tm-logo:hover {
+	  opacity: 1;
+	  background-position: unset;
+	}
+    .tm-category-posts-block .post-date .time .tm-event-venue {
+      color: #000;
+      font-size: 15px;
+    }
+</style>
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+
+</head>
+<body>
+
+{% block jumbotron %}
+{% endblock %}
+
+{% block pastors %}
+{% endblock %}
+
+{% block gallery %}
+{% endblock %}
+
+{% block contact_form %}
+{% endblock %}
+
+{% block next %}
+{% endblock %}
+
+{% block event %}
+{% endblock %}
+
+{% block amfi %}
+{% endblock %}
+
+
+{% block footer %}
+{% endblock %}
+
+
+
+
+<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/uikit.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/slider.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/slideset.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/slideshow.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/slideshow-fx.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/sticky.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/lightbox.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/accordion.js' %}"></script>
+<!-- <script type="text/javascript" src="{% static 'js/countdown.js' %}"></script> -->
+<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/grid.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/components/sortable.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+
+{% block java %}
+
+{% endblock %}
+
+
+</body>
+</html>

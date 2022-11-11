@@ -1,0 +1,258 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% load humanize %}
+
+
+{% block title %}
+{{ block.super }} Gallery
+{% endblock %}
+
+{% block jumbotron %}
+{% include 'gallery/header.html' %}
+
+<div class="tm-slider-box tm-light-bg">
+    <section class="tm-slider uk-grid tm-none-padding" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin>
+        <!-- start full width -->
+        <div class="uk-width-1-1">
+            <div class="uk-panel top-pageslider CuteChurch">
+
+                <div class="slider-module">
+                    <div class="uk-slidenav-position" data-uk-slideshow="{height: &#039;300&#039;, animation: &#039;fade&#039;, duration: &#039;&#039;, autoplay: true, autoplayInterval: &#039;5000&#039;, videoautoplay: false, videomute: false, kenburns: false}">
+                        <ul class="uk-slideshow uk-overlay-active">
+                            <li class="uk-cover uk-height-viewport  tm-wrap"><img src="{% static '/images/bg_page.jpg' %}" alt="bg_page" width="1920" height="360" class="aligncenter size-full" />
+                            </li>
+                            <li class="uk-cover uk-height-viewport  tm-wrap"><img src="{% static '/images/bg_page-01.jpg' %}" alt="bg_page-01" width="1920" height="300" class="aligncenter size-full" />
+                            </li>
+                            <li class="uk-cover uk-height-viewport  tm-wrap"><img src="{% static '/images/bg_page-02.jpg' %}" alt="bg_page-02" width="1920" height="300" class="aligncenter size-full" />
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- end full width -->
+    </section>
+</div>
+
+{% endblock %}
+
+
+{% block gallery %}
+<div class="uk-container uk-container-center">
+    <div class="uk-grid" data-uk-grid-match data-uk-grid-margin>
+        <div class="tm-main uk-width-medium-3-4 uk-push-1-4 tm-middle">
+            <main class="tm-content">
+                <div id="container">
+                    <div id="content" role="main">
+                        <p class="woocommerce-result-count">
+                            Showing 1&ndash;6 of 10 results</p>
+                        <form method="post" style='float: right; margin-left: 5px;' class="form-wppp-select products-per-page">
+                            <select name="ppp" onchange="this.form.submit()" class="select wppp-select">
+                                <option value="6" selected='selected'>6 products per page</option>
+                                <option value="9">9 products per page</option>
+                                <option value="12">12 products per page</option>
+                                <option value="18">18 products per page</option>
+                            </select>
+                        </form>
+                        <form class="woocommerce-ordering" method="get">
+                            <select name="orderby" class="orderby">
+                                <option value="popularity">Sort by popularity</option>
+                                <option value="rating">Sort by average rating</option>
+                                <option value="date">Sort by newness</option>
+                                <option value="price" selected='selected'>Sort by price: low to high</option>
+                                <option value="price-desc">Sort by price: high to low</option>
+                            </select>
+                        </form>
+                        <nav class="gridlist-toggle">
+                            <a href="#" id="grid" title="Grid view"><span class="dashicons dashicons-grid-view"></span> <em>Grid view</em></a><a href="#" id="list" title="List view"><span class="dashicons dashicons-exerpt-view"></span> <em>List view</em></a>
+                        </nav>
+                        <ul class="products">
+                            <li class="first post-411 product type-product status-publish has-post-thumbnail product_cat-advertisement sale shipping-taxable purchasable product-type-simple product-cat-advertisement instock">
+                                <a href="single-product.html">
+                                    <span class="onsale">Sale!</span>
+                                    <img width="300" height="300" src="{% static '/images/shop-item-1230-300x300.jpg' %}" class="attachment-shop_catalog wp-post-image" alt="shop-item-1230" />
+                                    <h3>Product 3</h3>
+                                    <span class="price"><del><span class="amount">&#36;15.00</span>
+                                    </del> <ins><span class="amount">&#36;12.00</span></ins>
+                                    </span>
+                                </a>
+                                <div>
+                                    <p>Nam sed purus ut dolor efficitur ultrices. Curabitur ut aliquam massa, vel iaculis.</p>
+                                </div>
+                                <div class="gridlist-buttonwrap">
+                                    <a href="#" rel="nofollow" data-product_id="411" data-product_sku="Product0013" data-quantity="1" class="button add_to_cart_button product_type_simple">Add to basket</a> </div>
+                                <hr />
+                            </li>
+                            <li class="post-412 product type-product status-publish has-post-thumbnail product_cat-faith sale shipping-taxable purchasable product-type-simple product-cat-faith instock">
+                                <a href="single-product.html">
+                                    <span class="onsale">Sale!</span>
+                                    <img width="300" height="300" src="{% static '/images/shop-item-042-300x300.jpg' %}" class="attachment-shop_catalog wp-post-image" alt="shop-item-042" />
+                                    <h3>Product 4</h3>
+                                    <span class="price"><del><span class="amount">&#36;15.00</span>
+                                    </del> <ins><span class="amount">&#36;12.00</span></ins>
+                                    </span>
+                                </a>
+                                <div>
+                                    <p>Nam sed purus ut dolor efficitur ultrices. Curabitur ut aliquam massa, vel iaculis.</p>
+                                </div>
+                                <div class="gridlist-buttonwrap">
+                                    <a href="#" rel="nofollow" data-product_id="412" data-product_sku="Product0014" data-quantity="1" class="button add_to_cart_button product_type_simple">Add to basket</a> </div>
+                                <hr />
+                            </li>
+                            <li class="post-413 product type-product status-publish has-post-thumbnail product_cat-personal sale shipping-taxable purchasable product-type-simple product-cat-personal instock">
+                                <a href="single-product.html">
+                                    <span class="onsale">Sale!</span>
+                                    <img width="300" height="300" src="{% static '/images/shop-item-04110-300x300.jpg' %}" class="attachment-shop_catalog wp-post-image" alt="shop-item-04110" />
+                                    <h3>Product 5</h3>
+                                    <span class="price"><del><span class="amount">&#36;15.00</span>
+                                    </del> <ins><span class="amount">&#36;12.00</span></ins>
+                                    </span>
+                                </a>
+                                <div>
+                                    <p>Nam sed purus ut dolor efficitur ultrices. Curabitur ut aliquam massa, vel iaculis.</p>
+                                </div>
+                                <div class="gridlist-buttonwrap">
+                                    <a href="/shop/?add-to-cart=413" rel="nofollow" data-product_id="413" data-product_sku="Product0015" data-quantity="1" class="button add_to_cart_button product_type_simple">Add to basket</a> </div>
+                                <hr />
+                            </li>
+                            <li class="last post-414 product type-product status-publish has-post-thumbnail product_cat-hobbies product_cat-masonry sale shipping-taxable purchasable product-type-simple product-cat-hobbies product-cat-masonry instock">
+                                <a href="single-product.html">
+                                    <span class="onsale">Sale!</span>
+                                    <img width="300" height="300" src="{% static '/images/shop-item-2381-300x300.jpg' %}" class="attachment-shop_catalog wp-post-image" alt="shop-item-2381" />
+                                    <h3>Product 6</h3>
+
+                                    <div class="star-rating" title="Rated 5.00 out of 5"><span style="width:100%"><strong class="rating">5.00</strong> out of 5</span>
+                                    </div>
+                                    <span class="price"><del><span class="amount">&#36;15.00</span>
+                                    </del> <ins><span class="amount">&#36;12.00</span></ins>
+                                    </span>
+                                </a>
+                                <div>
+                                    <p>Nam sed purus ut dolor efficitur ultrices. Curabitur ut aliquam massa, vel iaculis.</p>
+                                </div>
+                                <div class="gridlist-buttonwrap">
+                                    <a href="#" rel="nofollow" data-product_id="414" data-product_sku="Product0016" data-quantity="1" class="button add_to_cart_button product_type_simple">Add to basket</a> </div>
+                                <hr />
+                            </li>
+                            <li class="first post-415 product type-product status-publish has-post-thumbnail product_cat-love sale shipping-taxable purchasable product-type-simple product-cat-love instock">
+                                <a href="single-product.html">
+                                    <span class="onsale">Sale!</span>
+                                    <img width="300" height="300" src="{% static '/images/shop-item-557-300x300.jpg' %}" class="attachment-shop_catalog wp-post-image" alt="shop-item-557" />
+                                    <h3>Product 7</h3>
+
+                                    <div class="star-rating" title="Rated 4.00 out of 5"><span style="width:80%"><strong class="rating">4.00</strong> out of 5</span>
+                                    </div>
+                                    <span class="price"><del><span class="amount">&#36;15.00</span>
+                                    </del> <ins><span class="amount">&#36;12.00</span></ins>
+                                    </span>
+
+                                </a>
+                                <div>
+                                    <p>Suspendisse venenatis consectetur facilisis. In aliquet nunc id feugiat. </p>
+                                </div>
+                                <div class="gridlist-buttonwrap">
+                                    <a href="#" rel="nofollow" data-product_id="415" data-product_sku="Product0017" data-quantity="1" class="button add_to_cart_button product_type_simple">Add to basket</a> </div>
+                                <hr />
+                            </li>
+                            <li class="post-416 product type-product status-publish has-post-thumbnail product_cat-love sale shipping-taxable purchasable product-type-simple product-cat-love instock">
+                                <a href="single-product.html">
+                                    <span class="onsale">Sale!</span>
+                                    <img width="300" height="300" src="{% static '/images/shop-item-4321-300x300.jpg' %}" class="attachment-shop_catalog wp-post-image" alt="shop-item-4321" />
+                                    <h3>Product 8</h3>
+
+                                    <div class="star-rating" title="Rated 5.00 out of 5"><span style="width:100%"><strong class="rating">5.00</strong> out of 5</span>
+                                    </div>
+                                    <span class="price"><del><span class="amount">&#36;15.00</span>
+                                    </del> <ins><span class="amount">&#36;12.00</span></ins>
+                                    </span>
+
+                                </a>
+                                <div>
+                                    <p>Curabitur quis nisi libero. Pellentesque at accumsan nulla, nec fermentum felis.</p>
+                                </div>
+                                <div class="gridlist-buttonwrap">
+                                    <a href="#" rel="nofollow" data-product_id="416" data-product_sku="Product0018" data-quantity="1" class="button add_to_cart_button product_type_simple">Add to basket</a> </div>
+                                <hr />
+                            </li>
+                        </ul>
+                        <nav class="woocommerce-pagination">
+                            <ul class='page-numbers'>
+                                <li><span class='page-numbers current'>1</span>
+                                </li>
+                                <li><a class='page-numbers' href='#'>2</a>
+                                </li>
+                                <li><a class="next page-numbers" href="#">&rarr;</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <aside class="tm-sidebar-a uk-width-medium-1-4 uk-pull-3-4 tm-middle">
+            <div class="uk-panel woocommerce widget_product_search">
+                <h3 class="uk-panel-title">Search</h3>
+                <form role="search" method="get" class="woocommerce-product-search">
+                    <label class="screen-reader-text">Search for:</label>
+                    <input type="search" class="search-field" placeholder="Search Products&hellip;" value="" title="Search for:" />
+                    <input type="submit" value="Search" />
+                    <input type="hidden" name="post_type" value="product" />
+                </form>
+            </div>
+            <div class="uk-panel woocommerce widget_product_categories">
+                <h3 class="uk-panel-title">Categories</h3>
+                <ul class="product-categories">
+                    <li class="cat-item cat-item-37"><a href="#">Advertisement</a> <span class="count">(1)</span>
+                    </li>
+                    <li class="cat-item cat-item-38"><a href="#">Faith</a> <span class="count">(2)</span>
+                    </li>
+                    <li class="cat-item cat-item-39"><a href="#">Hobbies</a> <span class="count">(2)</span>
+                    </li>
+                    <li class="cat-item cat-item-41"><a href="#">Love</a> <span class="count">(2)</span>
+                    </li>
+                    <li class="cat-item cat-item-42"><a href="#">Masonry</a> <span class="count">(1)</span>
+                    </li>
+                    <li class="cat-item cat-item-40"><a href="#">Personal</a> <span class="count">(2)</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="uk-panel woocommerce widget_recent_reviews">
+                <h3 class="uk-panel-title">Recent Reviews</h3>
+                <ul class="product_list_widget">
+                    <li>
+                        <a href="single-product.html"><img width="180" height="180" src="{% static '/images/shop-item-4321-180x180.jpg' %}" class="attachment-shop_thumbnail wp-post-image" alt="shop-item-4321" />Product 8</a>
+                        <div class="star-rating" title="Rated 5 out of 5"><span style="width:100%"><strong class="rating">5</strong> out of 5</span>
+                        </div><span class="reviewer">by Ann Jenson</span>
+                    </li>
+                    <li>
+                        <a href="single-product.html"><img width="180" height="180" src="{% static '/images/shop-item-2381-180x180.jpg' %}" class="attachment-shop_thumbnail wp-post-image" alt="shop-item-2381" />Product 6</a>
+                        <div class="star-rating" title="Rated 5 out of 5"><span style="width:100%"><strong class="rating">5</strong> out of 5</span>
+                        </div><span class="reviewer">by John</span>
+                    </li>
+                    <li>
+                        <a href="single-product.html"><img width="180" height="180" src="{% static '/images/shop-item-2183-180x180.jpg' %}" class="attachment-shop_thumbnail wp-post-image" alt="shop-item-2183" />Product 9</a>
+                        <div class="star-rating" title="Rated 4 out of 5"><span style="width:80%"><strong class="rating">4</strong> out of 5</span>
+                        </div><span class="reviewer">by admin</span>
+                    </li>
+                    <li>
+                        <a href="single-product.html"><img width="180" height="180" src="{% static '/images/shop-item-557-180x180.jpg' %}" class="attachment-shop_thumbnail wp-post-image" alt="shop-item-557" />Product 7</a>
+                        <div class="star-rating" title="Rated 4 out of 5"><span style="width:80%"><strong class="rating">4</strong> out of 5</span>
+                        </div><span class="reviewer">by admin</span>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+{% block footer %}
+{% include 'home/footer.html' %}
+{% endblock %}
