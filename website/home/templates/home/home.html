@@ -115,19 +115,19 @@
 
 
 							
-	                        <!-- <li aria-hidden="true" class="uk-cover uk-height-viewport tm-wrap">
+	                        <li aria-hidden="true" class="uk-cover uk-height-viewport tm-wrap">
 	                        	<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeAAAAEOCAYAAABRmsRnAAACDUlEQVR4nO3BMQEAAADCoPVPbQo/oAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgZep3AAEMQQcfAAAAAElFTkSuQmCC" alt='' style="width:100%;height:auto;">
 	                        	<iframe data-uk-cover="{}" style="pointer-events: none; width: 1583px; height: 891px;" class="uk-position-absolute" data-player-id="sw-1" src="http://www.youtube.com/embed/gPyn5ToPlFw?autoplay=1&amp;loop=1&amp;controls=0&amp;showinfo=0&amp;start=0&amp;playlist=FoRmhWxmj70&amp;wmode=transparent&amp;vq=hd1080&amp;enablejsapi=1&amp;api=1&amp;player_id=sw-1&amp;enablejsapi=1&amp;api=1" allowfullscreen="" height="270" width="480"></iframe>
-							</li> -->
+							</li>
 	                    </ul>
 	                    <a href="#" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
 	                    <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
 	                    <ul class="uk-dotnav uk-dotnav-contrast uk-position-bottom uk-flex-center">
 	                        <li class="uk-active" data-uk-slideshow-item="0"><a href="">0</a></li>
-	                        <li data-uk-slideshow-item="1"><a href="">1</a></li>
+	                        <!-- <li data-uk-slideshow-item="1"><a href="">1</a></li>
 	                        <li data-uk-slideshow-item="2"><a href="">2</a></li>
 	                        <li data-uk-slideshow-item="3"><a href="">3</a></li>
-	                        <li data-uk-slideshow-item="4"><a href="">4</a></li>
+	                        <li data-uk-slideshow-item="4"><a href="">4</a></li> -->
 	                	</ul>
 	                </div>
 	        	</div>
@@ -147,11 +147,12 @@
                             <div id="countdowntimer-2-tophtml" class="cutechurch-tophtml">
                             	<h6>Next Event</h6>
                                 <h1 class="tm-title tcenter">
-                                    <span class="border">{{ event.title }}</span>
+                                    <a href="{{ event.get_absolute_url }}" class="tm-color-line"><span class="border" style="color:white;">{{ event.title }}</span></a>
                                     <h4>
                                     {% if event.body %}
-                                    <span class="brackets">
-                                        <a href="" class="tm-color-line">{{ event.body|safe }}</a>
+                                    <!-- <span class="brackets"> -->
+                                    	<span class="">
+                                        <a href="{{ event.get_absolute_url }}" class="tm-color-line">{{ event.body|safe }}</a>
                                     </span>
                                     {% endif %}
                                 </h4>
@@ -162,7 +163,7 @@
                                         <a href="/" class="tm-color-line">Countdown to Next Event</a>
                                     </span>
                                 </h4> -->
-                                <span class="date">{{ event.event_start_date|date:"M d, Y" }}</span><br>
+                                <a href="{{ event.get_absolute_url }}" class="tm-color-line"><span class="date">{{ event.event_start_date|date:"M d, Y" }}</span></a><br>
                                 <span style="display: none;" id="event_date" class="date">{{ event.event_start_date|date:"M d, Y H:m:s" }}</span>
                                 <br>
                                 <h6>Countdown</h6>
@@ -358,7 +359,7 @@
                     <div class="tm-widget-top-text">
                         <h1 class="tm-title tcenter">
                             <!-- <span class="border">St. Vincent de Paul</span> -->
-                            <span class="border">Christmass Responsibility</span>
+                            <span class="border">Christmas Responsibility</span>
                         </h1>
 						 <b>REMEMBER HOW THE ECONOMY IS TODAY.</b>
                     </div>
