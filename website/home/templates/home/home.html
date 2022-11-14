@@ -36,7 +36,7 @@
 	                        <li aria-hidden="true" class="uk-cover uk-height-viewport tm-wrap">
 	                        	<div class="uk-cover-background uk-position-cover"></div>
 	                        	<!-- <img src="{% static 'images/slider-img-01.jpg' %}" alt="slider-img-01" class="aligncenter size-full wp-image-629" height="960" width="1920"> -->
-	                        	<img src="{{ event.image_1024_by_300.url }}" alt="slider-img-01" class="aligncenter size-full wp-image-629" height="960" width="1920">
+	                        	<a href="{{ event.get_absolute_url }}"> <img src="{{ event.image_1024_by_300.url }}" alt="slider-img-01" class="aligncenter size-full wp-image-629" height="960" width="1920"></a>
 								<div class="uk-overlay-panel uk-overlay-right uk-overlay-fade uk-flex uk-flex-center uk-flex-middle uk-width-1-1">
 									<div class="uk-container uk-container-center tm-full-width">
 										<div class=" tm-wrap">
