@@ -32,7 +32,32 @@
 	            <div class="slider-module">
 	            	<div class="uk-slidenav-position" data-uk-slideshow="{height: 'auto', animation: 'fade', duration: '', autoplay: false, autoplayInterval: '6000', videoautoplay: false, videomute: false, kenburns: false}">
 	                	<ul class="uk-slideshow uk-overlay-active">
-	                        
+	                        {% if event.image_1024_by_300 %}
+	                        <li aria-hidden="true" class="uk-cover uk-height-viewport tm-wrap">
+	                        	<div class="uk-cover-background uk-position-cover"></div>
+	                        	<!-- <img src="{% static 'images/slider-img-01.jpg' %}" alt="slider-img-01" class="aligncenter size-full wp-image-629" height="960" width="1920"> -->
+	                        	<img src="{{ event.image_1024_by_300.url }}" alt="slider-img-01" class="aligncenter size-full wp-image-629" height="960" width="1920">
+								<div class="uk-overlay-panel uk-overlay-right uk-overlay-fade uk-flex uk-flex-center uk-flex-middle uk-width-1-1">
+									<div class="uk-container uk-container-center tm-full-width">
+										<div class=" tm-wrap">
+											<div class="tm-slide-style-1 uk-width-7-10">
+												<!-- <div class="uk-overlay-background tm-p-10">
+													
+													<div class="slide-text-primary tm-heading-font">“{{ event.title }}”</div>
+													<h3 class="slide-head">St. Augustine</h3>
+													
+													
+												</div> -->
+												<!-- <a href="sermons.html" class="tm-imageslider-button color-light">More&nbsp;<i class="uk-icon-long-arrow-right"></i></a> -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+
+
+
+	                        {% else %}
 							 <li aria-hidden="true" class="uk-cover uk-height-viewport tm-wrap">
 	                        	<div class="uk-cover-background uk-position-cover"></div>
 	                        	<!-- <img src="{% static 'images/slider-img-01.jpg' %}" alt="slider-img-01" class="aligncenter size-full wp-image-629" height="960" width="1920"> -->
@@ -51,6 +76,7 @@
 									</div>
 								</div>
 							</li>
+							{% endif %}
 	                        <!-- <li aria-hidden="true" class="uk-cover uk-height-viewport tm-wrap">
 	                        	<div class="uk-cover-background uk-position-cover"></div>
 	                        	<img src="{% static 'images/slider-img-062.png' %}" alt="slider-img-06" class="aligncenter size-full wp-image-630" height="960" width="1920">
@@ -141,6 +167,7 @@
     <div class="uk-container uk-container-center">
         <section class="tm-top-a uk-grid tm-xlarge-padding" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin="">
             <div class="uk-width-1-1">
+            	{% if event %}
                 <div class="uk-panel CountDownTimer">
                     <div id="countdowntimer-2-countdown" class="tminus_countdown" style="width:auto; height:auto;">
                         <div class="cutechurch-countdown omitweeks">
@@ -152,7 +179,7 @@
                                     {% if event.body %}
                                     <!-- <span class="brackets"> -->
                                     	<span class="">
-                                        <a href="{{ event.get_absolute_url }}" class="tm-color-line">{{ event.body|safe }}</a>
+                                        <a href="{{ event.get_absolute_url }}" class="tm-color-line">{{ event.snippet|safe }}</a>
                                     </span>
                                     {% endif %}
                                 </h4>
@@ -224,6 +251,7 @@
                         </div>
                     </div>
                 </div>
+                {% endif %}
             </div>
         </section>
     </div>
