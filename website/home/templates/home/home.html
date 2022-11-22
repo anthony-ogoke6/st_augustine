@@ -23,45 +23,44 @@
 
 {% block jumbotron %}
 {% include 'home/header.html' %}
-    
+
 <div class="tm-slider-box tm-dark-bg">
 	<section class="tm-slider uk-grid tm-none-padding" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin="">
 	<!-- start full width -->
 		<div class="uk-width-1-1">
-			<div class="uk-panel top-slider-width CuteChurch">        
+			<div class="uk-panel top-slider-width CuteChurch">
 	            <div class="slider-module">
 	            	<div class="uk-slidenav-position" data-uk-slideshow="{height: 'auto', animation: 'fade', duration: '', autoplay: false, autoplayInterval: '6000', videoautoplay: false, videomute: false, kenburns: false}">
 	                	<ul class="uk-slideshow uk-overlay-active">
-	                        {% if event.image_1024_by_300 %}
-	                        
+
+                            {% for i in event1 %}
+	                        {% if i.image_1024_by_300 %}
+
+
 	                        <li aria-hidden="true" class="uk-cover uk-height-viewport tm-wrap">
-	                        	<a href="{{ event.get_absolute_url }}">
+	                        	<a href="{{ i.get_absolute_url }}">
 	                        	<div class="uk-cover-background uk-position-cover"></div>
 	                        	<!-- <img src="{% static 'images/slider-img-01.jpg' %}" alt="slider-img-01" class="aligncenter size-full wp-image-629" height="960" width="1920"> -->
-	                        	 <img src="{{ event.image_1024_by_300.url }}" alt="slider-img-01" class="aligncenter size-full wp-image-629" height="960" width="1920">
+	                        	 <img src="{{ i.image_1024_by_300.url }}" alt="slider-img-01" class="aligncenter size-full wp-image-629" height="960" width="1920">
 								<div class="uk-overlay-panel uk-overlay-right uk-overlay-fade uk-flex uk-flex-center uk-flex-middle uk-width-1-1">
 									<div class="uk-container uk-container-center tm-full-width">
 										<div class=" tm-wrap">
 											<div class="tm-slide-style-1 uk-width-7-10">
 												<!-- <div class="uk-overlay-background tm-p-10">
-													
+
 													<div class="slide-text-primary tm-heading-font">“{{ event.title }}”</div>
 													<h3 class="slide-head">St. Augustine</h3>
-													
-													
+
+
 												</div> -->
-												<!-- <a href="sermons.html" class="tm-imageslider-button color-light">More&nbsp;<i class="uk-icon-long-arrow-right"></i></a> -->
+												 <a href="{{ i.get_absolute_url }}" class="tm-imageslider-button color-light">More&nbsp;<i class="uk-icon-long-arrow-right"></i></a>
 											</div>
 										</div>
 									</div>
 								</div>
 								</a>
 							</li>
-							
-
-
-
-	                        {% else %}
+							{% else %}
 							 <li aria-hidden="true" class="uk-cover uk-height-viewport tm-wrap">
 	                        	<div class="uk-cover-background uk-position-cover"></div>
 	                        	<!-- <img src="{% static 'images/slider-img-01.jpg' %}" alt="slider-img-01" class="aligncenter size-full wp-image-629" height="960" width="1920"> -->
@@ -80,58 +79,15 @@
 									</div>
 								</div>
 							</li>
+
 							{% endif %}
-	                        <!-- <li aria-hidden="true" class="uk-cover uk-height-viewport tm-wrap">
-	                        	<div class="uk-cover-background uk-position-cover"></div>
-	                        	<img src="{% static 'images/slider-img-062.png' %}" alt="slider-img-06" class="aligncenter size-full wp-image-630" height="960" width="1920">
-								<div class="uk-overlay-panel uk-overlay-right uk-overlay-slide-right uk-flex uk-flex-center uk-flex-middle uk-width-1-1">
-									<div class="uk-container uk-container-center tm-full-width">
-										<div class=" tm-wrap">
-											<div class="tm-slide-style-2 uk-width-1-1">
-												<div class="">
-													<div class="imageslider-background"><h3 class="slide-head">Harvest of Divine Supprises</h3></div><br>
-													<div class="imageslider-background"><h3 class="slide-head">Our Victory is Assured.</h3></div>
-												</div>
-												<a href="sermons.html" class="tm-imageslider-button color-light">More&nbsp;<i class="uk-icon-long-arrow-right"></i></a>
-											</div>
-										</div>
-									</div>
-								</div>
+							{% endfor %}
+
+							<li aria-hidden="true" class="uk-cover uk-height-viewport tm-wrap">
+	                        	<img src="{% static 'image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeAAAAEOCAYAAABRmsRnAAACDUlEQVR4nO3BMQEAAADCoPVPbQo/oAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgZep3AAEMQQcfAAAAAElFTkSuQmCC' %}" alt='' style="width:100%;height:auto;">
+	                        	<!--<iframe data-uk-cover="{}" style="pointer-events: none; width: 1583px; height: 891px;" class="uk-position-absolute" data-player-id="sw-1" src="http://www.youtube.com/embed/gPyn5ToPlFw?autoplay=1&amp;loop=1&amp;controls=0&amp;showinfo=0&amp;start=0&amp;playlist=FoRmhWxmj70&amp;wmode=transparent&amp;vq=hd1080&amp;enablejsapi=1&amp;api=1&amp;player_id=sw-1&amp;enablejsapi=1&amp;api=1" allowfullscreen="" height="270" width="480"></iframe>-->
+	                        	<iframe data-uk-cover="{}" style="width: 1583px; height: 891px;" class="uk-position-absolute" data-player-id="sw-1" src="https://www.youtube.com/embed/kR3vqQZWRqo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							</li>
-	                        <li aria-hidden="true" class="uk-cover uk-height-viewport tm-wrap">
-	                        	<div class="uk-cover-background uk-position-cover"></div>
-	                        	<img src="{% static 'images/slider-img-063.png' %}" alt="slider-img-01" class="aligncenter size-full wp-image-629" height="960" width="1920">
-								<div class="uk-overlay-panel uk-overlay-right uk-overlay-fade uk-flex uk-flex-center uk-flex-middle uk-width-1-1">
-									<div class="uk-container uk-container-center tm-full-width">
-										<div class=" tm-wrap">
-											<div class="tm-slide-style-1 uk-width-7-10">
-												<div class="uk-overlay-background tm-p-10">
-													<div class="slide-text-primary tm-heading-font">“I believe the Bible is the best gift God has ever given to man ...”</div>
-													<h3 class="slide-head">Donate now</h3>
-												</div>
-												<a href="sermons.html" class="tm-imageslider-button color-light">More&nbsp;<i class="uk-icon-long-arrow-right"></i></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</li>
-	                		<li aria-hidden="true" class="uk-cover uk-height-viewport tm-wrap">
-	                			<div class="uk-cover-background uk-position-cover"></div>
-	                			<img src="{% static 'images/slider-img-04.jpg' %}" alt="slider-img-05" class="aligncenter size-full wp-image-675" height="960" width="1920">
-								<div class="uk-overlay-panel uk-overlay-right uk-overlay-fade uk-flex uk-flex-center uk-flex-middle uk-width-1-1">
-									<div class="uk-container uk-container-center tm-full-width">
-										<div class=" tm-wrap">
-											<div class="tm-slide-style-2 uk-width-7-10">
-												<div class="uk-overlay-background tm-p-10">
-													<h3 class="slide-head">Martin Luther</h3>
-													<div class="slide-text-primary tm-heading-font">"To gather with God's people in united adoration of the Father is as necessary to the Christian life as prayer."</div>
-												</div>
-												<a href="sermons.html" class="tm-imageslider-button color-light">More&nbsp;<i class="uk-icon-long-arrow-right"></i></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</li> -->
 
 
 
@@ -144,20 +100,15 @@
 
 
 
-							
-	                        <li aria-hidden="true" class="uk-cover uk-height-viewport tm-wrap">
-	                        	<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeAAAAEOCAYAAABRmsRnAAACDUlEQVR4nO3BMQEAAADCoPVPbQo/oAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgZep3AAEMQQcfAAAAAElFTkSuQmCC" alt='' style="width:100%;height:auto;">
-	                        	<iframe data-uk-cover="{}" style="pointer-events: none; width: 1583px; height: 891px;" class="uk-position-absolute" data-player-id="sw-1" src="http://www.youtube.com/embed/gPyn5ToPlFw?autoplay=1&amp;loop=1&amp;controls=0&amp;showinfo=0&amp;start=0&amp;playlist=FoRmhWxmj70&amp;wmode=transparent&amp;vq=hd1080&amp;enablejsapi=1&amp;api=1&amp;player_id=sw-1&amp;enablejsapi=1&amp;api=1" allowfullscreen="" height="270" width="480"></iframe>
-							</li>
 	                    </ul>
 	                    <a href="#" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
 	                    <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
 	                    <ul class="uk-dotnav uk-dotnav-contrast uk-position-bottom uk-flex-center">
-	                        <li class="uk-active" data-uk-slideshow-item="0"><a href="">0</a></li>
-	                        <!-- <li data-uk-slideshow-item="1"><a href="">1</a></li>
+	                        <li class="uk-active dot" data-uk-slideshow-item="0"><a href="">0</a></li>
+	                         <li data-uk-slideshow-item="1"><a href="">1</a></li>
 	                        <li data-uk-slideshow-item="2"><a href="">2</a></li>
 	                        <li data-uk-slideshow-item="3"><a href="">3</a></li>
-	                        <li data-uk-slideshow-item="4"><a href="">4</a></li> -->
+	                        <li data-uk-slideshow-item="4"><a href="">4</a></li>
 	                	</ul>
 	                </div>
 	        	</div>
@@ -180,15 +131,15 @@
                                 <h1 class="tm-title tcenter">
                                     <a href="{{ event.get_absolute_url }}" class="tm-color-line"><span class="border" style="color:white;">{{ event.title }}</span></a>
                                     <h4>
-                                    {% if event.body %}
+                                    {% if event.snippet %}
                                     <!-- <span class="brackets"> -->
-                                    	<span class="">
+                                    <span class="">
                                         <a href="{{ event.get_absolute_url }}" class="tm-color-line">{{ event.snippet|safe }}</a>
                                     </span>
                                     {% endif %}
                                 </h4>
                                 </h1>
-                                
+
                                 <!-- <h4>
                                     <span class="brackets">
                                         <a href="/" class="tm-color-line">Countdown to Next Event</a>
@@ -207,7 +158,7 @@
 
                             <div id="countdowntimer-2-dashboard" class="cutechurch-dashboard">
                                 <div class="cutechurch-dash cutechurch-days_dash">
-                                    <div class="cutechurch-dash_title">days</div>
+                                    <div class="cutechurch-dash_title" style="color:black;">days</div>
                                     <div class="cutechurch-digit">
                                         <div style="display: none;" class="top">0</div>
                                         <div id="days" style="display: block;" class="bottom">0</div>
@@ -218,7 +169,7 @@
                                     </div> -->
                                 </div>
                                 <div class="cutechurch-dash cutechurch-hours_dash">
-                                    <div class="cutechurch-dash_title">hours</div>
+                                    <div class="cutechurch-dash_title" style="color:black;">hours</div>
                                     <div class="cutechurch-digit">
                                         <div style="display: none;" class="top">0</div>
                                         <div id="hours" style="display: block;" class="bottom">0</div>
@@ -229,18 +180,18 @@
                                     </div> -->
                                 </div>
                                 <div class="cutechurch-dash cutechurch-minutes_dash">
-                                    <div class="cutechurch-dash_title">minutes</div>
+                                    <div class="cutechurch-dash_title" style="color:black;">minutes</div>
                                     <div class="cutechurch-digit">
                                         <div style="display: none;" class="top">0</div>
                                         <div id="minutes" style="display: block;" class="bottom">0</div>
                                     </div>
                                     <!-- <div class="cutechurch-digit">
                                         <div style="display: none;" class="top">6</div>
-                                        <div style="display: block;" class="bottom">6</div>
+                                        <div style="display: block; color:black;" class="bottom">6</div>
                                     </div> -->
                                 </div>
                                 <div class="cutechurch-dash cutechurch-seconds_dash">
-                                    <div class="cutechurch-dash_title">seconds</div>
+                                    <div class="cutechurch-dash_title" style="color:black;">seconds</div>
                                     <div class="cutechurch-digit">
                                         <div style="display: none;" class="top">0</div>
                                         <div id="seconds" style="display: block;" class="bottom">0</div>
@@ -308,7 +259,7 @@
 
 				    				{% endif %}
                                 </div>
-                                
+
                           </div>
                         </div>
                     </div>
@@ -358,20 +309,36 @@
                                     	<br>
                                         <p class="tm-event-venue">{{ i.event_start_date|date:"H:m"}}</p>
                                     </div>
+
+                                    <!--<div class="time">
+                                    	<br>
+                                    <div id="seconds" style="display: block;  color:black;" class="bottom hours1">0</div>
+                                    </div>-->
+
+
+
+
+
+
+
+
+
+
                                 </div>
                                 <div style="padding: 20px;">
                                     <h3 class="uk-panel-header">
                                         <a href="event.html"></a>
                                     </h3>
-                                    <p style="font-size: 25px;">{{ i.title }}</p>                    
-                                    <a href="event.html" class="read-more" rel="bookmark">Read more</a>
+                                    <a href="{{ event.get_absolute_url }}" class="tm-color-line"><p style="font-size: 25px;">{{ i.title }}</p></a>
+                                    <a href="{{ event.get_absolute_url }}" class="read-more" rel="bookmark">Read more</a>
                                 </div>
                             </li>
+
                             {% endfor %}
                         </ul>
                         {% endif %}
                     </div>
-                	<a href="{% url 'mass:mass' %}" rel="bookmark" class="tm-event-widget-button">All Events</a>
+                	<!--<a href="{% url 'mass:mass' %}" rel="bookmark" class="tm-event-widget-button">All Events</a>-->
                 </div>
             </div>
         </section>
@@ -420,7 +387,7 @@
                                         <div id="give-form-508-wrap" class="give-form-wrap give-display-modal">
                                             <div class="goal-progress">
                                                 <!-- <div class="raised">
-                                                    <span class="income">$125,906.00</span> of 
+                                                    <span class="income">$125,906.00</span> of
                                                     <span class="goal-text">$200,000.00 raised</span>
                                                 </div> -->
                                                 <div class="progress-bar">
@@ -451,14 +418,14 @@
                                                 <input name="give-form-title" value="Donation form 5" type="hidden">
                                                 <input name="give-current-url" value="" type="hidden">
                                                 <input name="give-form-url" value="" type="hidden">
-                                                
+
                                                 <div class="give-total-wrap">
                                                    <div class="give-donation-amount form-row-wide">
                                                        <span class="give-currency-symbol give-currency-position-before">NGN</span>
                                                        <input class="give-text-input" name="give-amount" placeholder="" value="0.00" required autocomplete="off" type="tel">
 
                                                        <p class="give-loading-text give-updating-price-loader" style="display: none;">
-                                                        <span class="give-loading-animation"></span> Updating Amount					
+                                                        <span class="give-loading-animation"></span> Updating Amount
                                                         <span class="elipsis">.</span>
                                                         <span class="elipsis">.</span>
                                                         <span class="elipsis">.</span>
@@ -470,10 +437,10 @@
                                                 </div>
 
                                                 <button type="button" class="give-btn give-btn-modal">Donate Now</button>
-                                                
-                                                
+
+
                                             </form> -->
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -502,11 +469,11 @@
             <div class="uk-panel CutePostGallery">
                 <div class="uk-slidenav-position" data-uk-slider="">
                     <div class="uk-slider-container">
-                    	
+
                         <ul class="uk-slider uk-grid uk-grid-collapse uk-grid-width-small-1-2 uk-grid-width-medium-1-4 uk-grid-width-large-1-6 uk-grid-width-xlarge-1-6">
                         	{% if gallery %}
                         	{% for i in gallery %}
-                        	
+
                         	<li>
                         		<a href="{{ i.occasion.get_absolute_url }}">
                                 <figure class="uk-overlay uk-overlay-hover">
@@ -597,7 +564,7 @@
                             </li>
                             {% endif %}
                         </ul>
-                        
+
                     </div>
                 	<a draggable="false" href="#" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slider-item="previous"></a>
                     <a draggable="false" href="#" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slider-item="next"></a>
@@ -608,7 +575,7 @@
 </div>
 {% endif %}
 
-<div class="tm-top-g-box tm-light-bg"><!-- 
+<div class="tm-top-g-box tm-light-bg"><!--
     <div class="uk-container uk-container-center">
         <section class="tm-top-g uk-grid tm-xlarge-padding" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin="">
             <div class="uk-width-1-1 uk-width-large-1-2">
@@ -723,7 +690,7 @@
                         <div class="uk-width-1-1">
                             <h3 class="uk-panel-header uk-accordion-title tm-accordion-title uk-active">Where Can I Find my Purchase Code?</h3>
                             <div aria-expanded="true" role="complementary" data-wrapper="true" style="overflow:hidden;height:0;position:relative;">
-                                <div class="uk-accordion-content">Nam in ultricies quam. Integer ut semper augue. Duis ut hendrerit tortor. Nunc pretium magna risus, ut dictum augue ornare in. Nulla vitae faucibus risus. Curabitur nec tortor porttitor, mollis…                        
+                                <div class="uk-accordion-content">Nam in ultricies quam. Integer ut semper augue. Duis ut hendrerit tortor. Nunc pretium magna risus, ut dictum augue ornare in. Nulla vitae faucibus risus. Curabitur nec tortor porttitor, mollis…
                                 <a href="#" class="read-more">read more</a>
                                 </div>
                             </div>
@@ -731,7 +698,7 @@
                         <div class="uk-width-1-1">
                             <h3 class="uk-panel-header uk-accordion-title tm-accordion-title">Getting Support For Your Item</h3>
                             <div aria-expanded="false" role="complementary" data-wrapper="true" style="overflow:hidden;height:0;position:relative;">
-                                <div class="uk-accordion-content">Integer ut semper augue. Duis ut hendrerit tortor. Nunc pretium magna risus, ut dictum augue ornare in. Nulla vitae faucibus risus. Curabitur nec tortor porttitor, mollis purus sodales, fermentum enim.…                        
+                                <div class="uk-accordion-content">Integer ut semper augue. Duis ut hendrerit tortor. Nunc pretium magna risus, ut dictum augue ornare in. Nulla vitae faucibus risus. Curabitur nec tortor porttitor, mollis purus sodales, fermentum enim.…
                                 <a href="#" class="read-more">read more</a>
                                 </div>
                             </div>
@@ -739,7 +706,7 @@
                         <div class="uk-width-1-1">
                             <h3 class="uk-panel-header uk-accordion-title tm-accordion-title">Can I Get A Refund?</h3>
                             <div aria-expanded="false" role="complementary" data-wrapper="true" style="overflow:hidden;height:0;position:relative;">
-                                <div class="uk-accordion-content">Praesent ullamcorper ornare pharetra. Vestibulum est ipsum, condimentum non sollicitudin sollicitudin, lobortis nec urna. Nulla condimentum sem nec felis vehicula, nec ultricies orci suscipit. Nunc auctor rhoncus volutpat. Class aptent…                        
+                                <div class="uk-accordion-content">Praesent ullamcorper ornare pharetra. Vestibulum est ipsum, condimentum non sollicitudin sollicitudin, lobortis nec urna. Nulla condimentum sem nec felis vehicula, nec ultricies orci suscipit. Nunc auctor rhoncus volutpat. Class aptent…
                                     <a href="#" class="read-more">read more</a>
                                 </div>
                             </div>
@@ -747,7 +714,7 @@
                         <div class="uk-width-1-1">
                             <h3 class="uk-panel-header uk-accordion-title tm-accordion-title">Which Author Payment Option Do I Choose?</h3>
                             <div aria-expanded="false" role="complementary" data-wrapper="true" style="overflow:hidden;height:0;position:relative;">
-                                <div class="uk-accordion-content">Sed dictum urna quis tortor auctor, vel auctor arcu mollis. Nulla aliquet sollicitudin ipsum, nec laoreet metus rhoncus eget. Phasellus vitae imperdiet ligula. Donec nec nunc euismod odio imperdiet ornare.…                        
+                                <div class="uk-accordion-content">Sed dictum urna quis tortor auctor, vel auctor arcu mollis. Nulla aliquet sollicitudin ipsum, nec laoreet metus rhoncus eget. Phasellus vitae imperdiet ligula. Donec nec nunc euismod odio imperdiet ornare.…
                                 <a href="#" class="read-more">read more</a>
                                 </div>
                             </div>
@@ -755,7 +722,7 @@
                         <div class="uk-width-1-1">
                             <h3 class="uk-panel-header uk-accordion-title tm-accordion-title">Envato Market and Intellectual Property</h3>
                             <div aria-expanded="false" role="complementary" data-wrapper="true" style="overflow:hidden;height:0;position:relative;">
-                                <div class="uk-accordion-content">Etiam interdum enim risus, a dictum lacus eleifend nec. Donec dui nisi, faucibus nec eros vitae, posuere vehicula erat. Proin id posuere metus. Nunc quam lectus, laoreet id venenatis at,…                        
+                                <div class="uk-accordion-content">Etiam interdum enim risus, a dictum lacus eleifend nec. Donec dui nisi, faucibus nec eros vitae, posuere vehicula erat. Proin id posuere metus. Nunc quam lectus, laoreet id venenatis at,…
                                 <a href="#" class="read-more">read more</a>
                                 </div>
                             </div>
@@ -763,7 +730,7 @@
                         <div class="uk-width-1-1">
                             <h3 class="uk-panel-header uk-accordion-title tm-accordion-title">Envato Market Content Policy</h3>
                             <div aria-expanded="false" role="complementary" data-wrapper="true" style="overflow:hidden;height:0;position:relative;">
-                                <div class="uk-accordion-content">Morbi dignissim augue et elit venenatis, a consequat neque faucibus. Integer cursus mauris vitae dolor tincidunt pulvinar. Fusce sagittis scelerisque scelerisque. Praesent condimentum sapien et dui sagittis, ac dapibus augue…                        
+                                <div class="uk-accordion-content">Morbi dignissim augue et elit venenatis, a consequat neque faucibus. Integer cursus mauris vitae dolor tincidunt pulvinar. Fusce sagittis scelerisque scelerisque. Praesent condimentum sapien et dui sagittis, ac dapibus augue…
                                 <a href="#" class="read-more">read more</a>
                                 </div>
                             </div>
@@ -771,7 +738,7 @@
                         <div class="uk-width-1-1">
                             <h3 class="uk-panel-header uk-accordion-title tm-accordion-title">Was our Help Center useful?</h3>
                             <div aria-expanded="false" role="complementary" data-wrapper="true" style="overflow:hidden;height:0;position:relative;">
-                                <div class="uk-accordion-content">Donec nec nunc euismod odio imperdiet ornare. Maecenas quis ipsum rhoncus, ultrices ligula eu, interdum dui. In sit amet volutpat erat. In nunc nisl, varius a accumsan quis, imperdiet sit…                        
+                                <div class="uk-accordion-content">Donec nec nunc euismod odio imperdiet ornare. Maecenas quis ipsum rhoncus, ultrices ligula eu, interdum dui. In sit amet volutpat erat. In nunc nisl, varius a accumsan quis, imperdiet sit…
                                 <a href="#" class="read-more">read more</a>
                                 </div>
                             </div>
@@ -779,7 +746,7 @@
                         <div class="uk-width-1-1">
                             <h3 class="uk-panel-header uk-accordion-title tm-accordion-title">How to edit form.</h3>
                             <div aria-expanded="false" role="complementary" data-wrapper="true" style="overflow:hidden;height:0;position:relative;">
-                                <div class="uk-accordion-content">Donec nec nunc euismod odio imperdiet ornare. Maecenas quis ipsum rhoncus, ultrices ligula eu, interdum dui. In sit amet volutpat erat. In nunc nisl, varius a accumsan quis, imperdiet sit…                        
+                                <div class="uk-accordion-content">Donec nec nunc euismod odio imperdiet ornare. Maecenas quis ipsum rhoncus, ultrices ligula eu, interdum dui. In sit amet volutpat erat. In nunc nisl, varius a accumsan quis, imperdiet sit…
                                 <a href="#" class="read-more">read more</a>
                                 </div>
                             </div>
@@ -793,7 +760,7 @@
 
 <div class="uk-container uk-container-center"></div>
 
-<div class="tm-bottom-a-box tm-light-bg"><!-- 
+<div class="tm-bottom-a-box tm-light-bg"><!--
     <section class="tm-bottom-a uk-grid tm-none-padding" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin="">
         <div class="uk-width-1-1">
         	<br><br><br>
@@ -927,7 +894,7 @@
                         <div class="uk-slidenav-position">
                         	{% if priests %}
                             <ul class="uk-grid uk-slideset uk-grid-width-1-1 uk-grid-width-large-1-2 uk-grid-width-medium-1-2 uk-grid-width-small-1-1">
-                            	
+
                             	{% for i in priests %}
                                 <li class="uk-active" style="">
                                     <div class="uk-panel">
@@ -958,7 +925,7 @@
     </div>
 </div>
 
-<div class="tm-bottom-d-box tm-dark-bg"><!-- 
+<div class="tm-bottom-d-box tm-dark-bg"><!--
     <section class="tm-bottom-d uk-grid tm-none-padding" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin>
         <div class="uk-width-1-1">
             <div class="uk-panel CutePartners" >
@@ -981,7 +948,7 @@
         </div>
     </section>
  --></div>
-<div class="tm-bottom-e-box tm-light-bg"><!-- 
+<div class="tm-bottom-e-box tm-light-bg"><!--
     <section class="tm-bottom-e uk-grid tm-none-padding" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin>
         <div class="uk-width-1-1">
             <div class="uk-panel widget_text" >
@@ -989,7 +956,7 @@
 	            	<script>
 	                    window.map = false;
 	                    window.marker = "{% static 'images/map-marker.png' %}";
-	                                            
+
 	                    function create_marker(marker_data){
 	                        var infowindow = new google.maps.InfoWindow({
 	                            content: '<div class="map-marker-content">'+
@@ -1008,10 +975,10 @@
 	                            infowindow.open(window.map,marker);
 	                        });
 	                    }
-	                                            
+
 	                    function initialize(){
 	                        var myLatlng = new google.maps.LatLng(50.3915097,-4.1306689);
-	                    
+
 	                        var mapOptions = {
 	                            zoom:16,
 	                            center: myLatlng,
@@ -1020,10 +987,10 @@
 
 	                            streetViewControl:false,
 	                            overviewMapControl:false,
-	                            mapTypeControl:false	
-								
+	                            mapTypeControl:false
+
 	                        };
-							
+
 	                        window.map = new google.maps.Map(document.getElementById('map'), mapOptions);																																																														 						create_marker({
 	                            header:'St. AUgustine Catholic Church,',
 	                            address:'Mary-Hill, Ikorodu,',
@@ -1032,13 +999,13 @@
 	                            lat:50.3915097,
 	                            lng:-4.1306689
 	                        });
-							
+
 	                    }
-	                
+
 	                    google.maps.event.addDomListener(window, 'load', initialize);
             </script>
 	                <div id="map"></div>
-	            </div>   
+	            </div>
             </div>
         </div>
     </section>
@@ -1076,7 +1043,7 @@
 	const seconds = document.getElementById("seconds")
 
 	const event_time = Date.parse(event_date.textContent)
-	
+
 	var event_date = new Date(event_date.textContent).getTime();
 
 
@@ -1105,12 +1072,68 @@
 
 			minutes.innerHTML = m
 
-			seconds.innerHTML = s		
+			seconds.innerHTML = s
 		}
 
 	}, 1000)
 
-	
+
 </script>
+
+
+
+
+
+<script type="text/javascript">
+/*	var event_date = document.getElementById("event_date")
+
+	const days = document.getElementById("days")
+
+	const hours = document.getElementById("hours")
+
+	const minutes = document.getElementById("minutes")
+
+	const seconds = document.getElementById("seconds")
+
+	const event_time = Date.parse(event_date.textContent)
+
+	var event_date = new Date(event_date.textContent).getTime();
+
+
+
+	setInterval(()=>{
+		const now = new Date().getTime()
+		console.log(now)
+		console.log("now")
+
+		const diff = event_date - now
+		console.log(diff)
+		console.log("diff")
+
+		const d = Math.floor(event_date / (1000 * 60 * 60 * 24) - (now / (1000 * 60 * 60 * 24)))
+
+		const h = Math.floor((event_date / (1000 * 60 * 60) - (now / (1000 * 60 * 60))) % 24)
+
+		const m = Math.floor((event_date / (1000 * 60) - (now / (1000 * 60))) % 60)
+
+		const s = Math.floor((event_date / (1000) - (now / (1000))) % 60)
+
+		if (diff>0){
+			days.innerHTML = d
+
+			hours.innerHTML = h
+
+			minutes.innerHTML = m
+
+			seconds.innerHTML = s
+		}
+
+	}, 1000)*/
+
+
+</script>
+
+
+
 
 {% endblock %}

@@ -32,6 +32,7 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import *
 from mass.models import *
 from priests.models import *
+from home.models import *
 
 
 
@@ -119,7 +120,7 @@ logger = logging.getLogger(__name__)
 def mass(request):
 	today = str(datetime.datetime.now().strftime('%x'))
 	try:
-		mass = Mass.objects.all()
+		mass = Event.objects.all()
 	except:
 		mass = None
 	context = {

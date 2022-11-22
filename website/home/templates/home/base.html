@@ -97,7 +97,7 @@
         <li class="{% if request.path == home %}uk-active{% endif %}" >
             <a href="{% url 'home:home' %}" class="">HOME</a>
         </li>
-        
+
         <li class="{% if request.path == event %}uk-active{% endif %}">
             <a href="{% url 'home:events' %}" class="">EVENT</a>
         </li>
@@ -109,7 +109,7 @@
         </li> -->
         <li class="{% if request.path == priests %}uk-active{% endif %}">
             <a href="{% url 'priests:priests' %}" class="">PRIESTS</a>
-        </li>   
+        </li>
         <li>
             <a href="https://www.amfiinstitute.com" class="">AMFI</a>
         </li>
@@ -133,7 +133,6 @@
 <script type="text/javascript" src="{% static 'js/components/lightbox.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/components/accordion.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/countdown.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/components/grid.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/components/sortable.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>

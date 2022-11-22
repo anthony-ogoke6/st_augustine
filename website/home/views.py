@@ -64,7 +64,7 @@ def home(request):
 		video = AdvertVideo.objects.all()[0]
 	except:
 		video = None
-	
+
 	today = str(datetime.datetime.now().strftime('%x'))
 
 	today = str(datetime.datetime.now().strftime('%x'))
@@ -83,7 +83,18 @@ def home(request):
 		event= None
 
 	try:
-		mass_obj = Event.objects.filter(event_type="Mass").order_by('event_start_date')
+	    event1 = []
+	    event2 = Event.objects.filter(event_type="Celebration").order_by('event_start_date')
+	    for i in event2:
+	        event_date = str(i.event_start_date.strftime('%x'))
+	        if event_date >= today:
+	            event1.append(i)
+
+	except:
+		event1= None
+	try:
+		#mass_obj = Event.objects.filter(event_type="Mass").order_by('event_start_date')
+		mass_obj = Event.objects.order_by('event_start_date')
 		mass = []
 		for i in mass_obj:
 			mass_date = str(i.event_start_date.strftime('%x'))
@@ -93,6 +104,7 @@ def home(request):
 		mass = None
 	context = {
     	'event': event,
+    	'event1': event1,
     	'mass': mass,
     	'priests': priests,
     	'slider':slider,
