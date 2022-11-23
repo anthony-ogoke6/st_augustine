@@ -64,12 +64,11 @@
 
     /*.tm-header-offset {
         display: none;
-        opacity: 0;
     }*/
 
 
 
-    @media only screen and (max-width: 600px) {
+    @media (max-width: 600px) {
 
         .iframeVideo {
             height: 0px;
@@ -101,7 +100,7 @@
         .uk-slidenav-position .uk-slidenav {
           display: none;
           position: absolute;
-          top: 20%;
+          top: 30%;
           z-index: 1;
           margin-top: -30px;
         }
@@ -144,7 +143,7 @@
         }
 
         #next_event {
-          margin-top: 28px;
+          margin-top: 50px;
         }
 
         .abt {
@@ -326,6 +325,15 @@ window.onscroll = function() {
     document.getElementById("nav-scroll").style.display = "block";
   } else {
     document.getElementById("nav-scroll").style.display = "none";
+  }
+
+
+  if (currentScrollPos > 20) {
+    // I am using 'display' instead of 'top':
+    document.getElementById(".tm-logo").style.display = "initial";
+  } else {
+    document.getElementById(".tm-logo").style.display = "block";
+    document.getElementById(".tm-logo").style.opacity = 1;
   }
   prevScrollpos = currentScrollPos;
 }

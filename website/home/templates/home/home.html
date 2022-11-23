@@ -25,7 +25,7 @@
 {% include 'home/header.html' %}
 
 <div class="tm-slider-box tm-dark-bg">
-	<section class="tm-slider uk-grid tm-none-padding" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin="">
+	<section class="tm-slider uk-grid tm-none-padding tab" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin="">
 	<!-- start full width -->
 		<div class="uk-width-1-1">
 			<div class="uk-panel top-slider-width CuteChurch">
@@ -110,7 +110,7 @@
 	                    </ul>
 	                    <a href="#" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
 	                    <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
-	                    <ul class="uk-dotnav uk-dotnav-contrast uk-position-bottom uk-flex-center">
+	                    <ul class="uk-dotnav uk-dotnav-contrast uk-position-bottom uk-flex-center circle">
 	                        <li class="uk-active dot" data-uk-slideshow-item="0"><a href="">0</a></li>
 	                         <li data-uk-slideshow-item="1"><a href="">1</a></li>
 	                        <li data-uk-slideshow-item="2"><a href="">2</a></li>
@@ -872,15 +872,12 @@
 
 {% block java %}
 <script type="text/javascript">
-
-    console.log("checking jquery1")
-    
     $(window).on( "load", function() {
     console.log("checking jquery")
     }
 </script>
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 	var event_date = document.getElementById("event_date")
 
 	const days = document.getElementById("days")
@@ -928,7 +925,7 @@
 
 
 </script>
- -->
+
 
 
 
